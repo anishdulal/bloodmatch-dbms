@@ -4,18 +4,16 @@ error_reporting(E_ALL);
 
 include('../includes/db_connect.php');
 
-$query = "SELECT d.id, d.name, COUNT(de.donor_id) AS donation_count
+$query = "SELECT d.id, d.name, d.group, COUNT(*) AS donation_count
           FROM donor d
-          JOIN donation_event de ON d.id = de.donor_id
-          GROUP BY d.id, d.name
+          GROUP BY d.name, d.group
           ORDER BY donation_count DESC
           LIMIT 5";
 $stmt = $conn->prepare($query);
 
-if ($stmt->execute()) {
-    $stmt->execute();
-} else {
+if (!$stmt->execute()) {
     echo "Error: " . join(", ", $stmt->errorInfo());
+    exit;
 }
 
 ?>
@@ -43,7 +41,7 @@ if ($stmt->execute()) {
         <li><a href="../blood_banks/add_blood_bank.php">Add Blood Bank</a></li>
         <li><a href="../blood_banks/list_blood_banks.php">List Blood Banks</a></li>
         <li><a href="../blood_banks/search_blood_banks.php">Search Blood Banks</a></li>
-        <li><a href="../donations/add_donation.php">Add Donation</a></li>
+        <!-- <li><a href="../donations/add_donation.php">Add Donation</a></li> -->
         <li><a href="../reports/top_donors.php">Top Donors</a></li>
         <li><a href="../reports/blood_availability.php">Blood Availability</a></li>
         <li><a href="../reports/matching_donors_recipients.php">Matching Donors and Recipients</a></li>
@@ -59,9 +57,9 @@ if ($stmt->execute()) {
 
     <?php
     if ($stmt->rowCount() > 0) {
-        echo "<table><tr><th>ID</th><th>Name</th><th>Donation Count</th></tr>";
+        echo "<table><tr><th>ID</th><th>Name</th><th>Blood Group</th><th>Donation Count</th></tr>";
         while ($row = $stmt->fetch(PDO::FETCH_ASSOC)) {
-            echo "<tr><td>".$row["id"]."</td><td>".$row["name"]."</td><td>".$row["donation_count"]."</td></tr>";
+            echo "<tr><td>".$row["id"]."</td><td>".$row["name"]."</td><td>".$row["group"]."</td><td>".$row["donation_count"]."</td></tr>";
         }
         echo "</table>";
     } else {
