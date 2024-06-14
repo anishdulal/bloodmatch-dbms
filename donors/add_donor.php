@@ -1,5 +1,8 @@
 <?php
-include('../includes/db_connect.php'); 
+ini_set('display_errors', 1);
+error_reporting(E_ALL);
+
+include('../includes/db_connect.php');
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $name = $_POST["name"];
@@ -25,27 +28,54 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 
     $stmt->closeCursor();
 }
-
 ?>
 
 <!DOCTYPE html>
 <html>
+<head>
+    <link rel="stylesheet" type="text/css" href="../css/styles.css">
+    <title>Add Donor</title>
+</head>
 <body>
 
-<h2>Donor Registration Form</h2>
+<header>
+    <h1>Blood Donation System</h1>
+</header>
 
-<form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
-  Name:<br>
-  <input type="text" name="name">
-  <br>
-  Blood Group:<br>
-  <input type="text" name="group">
-  <br>
-  Location:<br>
-  <input type="text" name="location">
-  <br><br>
-  <input type="submit" value="Submit">
-</form>
+<nav>
+    <ul>
+        <li><a href="../donors/add_donor.php">Add Donor</a></li>
+        <li><a href="../donors/list_donors.php">List Donors</a></li>
+        <li><a href="../donors/search_donors.php">Search Donors</a></li>
+        <li><a href="../recipients/add_recipient.php">Add Recipient</a></li>
+        <li><a href="../recipients/list_recipients.php">List Recipients</a></li>
+        <li><a href="../recipients/search_recipients.php">Search Recipients</a></li>
+        <li><a href="../blood_banks/add_blood_bank.php">Add Blood Bank</a></li>
+        <li><a href="../blood_banks/list_blood_banks.php">List Blood Banks</a></li>
+        <li><a href="../blood_banks/search_blood_banks.php">Search Blood Banks</a></li>
+        <li><a href="../donations/add_donation.php">Add Donation</a></li>
+        <li><a href="../donations/list_donations.php">List Donations</a></li>
+        <li><a href="../donations/search_donations.php">Search Donations</a></li>
+    </ul>
+</nav>
+
+<div class="container">
+    <h2>Donor Registration Form</h2>
+    <p>Fill in the details below to register a new donor in the system. Make sure all information is accurate and complete.</p>
+
+    <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name"><br><br>
+
+      <label for="group">Blood Group:</label><br>
+      <input type="text" id="group" name="group"><br><br>
+
+      <label for="location">Location:</label><br>
+      <input type="text" id="location" name="location"><br><br>
+
+      <input type="submit" value="Submit">
+    </form>
+</div>
 
 </body>
 </html>
