@@ -69,11 +69,11 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <li><a href="reports/matching_donors_recipients.php">Matching Donors and Recipients</a></li>
         <li><a href="reports/total_donations_by_blood_type.php">Total Donations by Blood Type</a></li>
         <li><a href="reports/blood_bank_donations.php">Blood Bank Donations</a></li>
-        <li><a href="reports/recipients_by_hospital.php">Recipients by Hospital</a></li>
-        <li><a href="reports/recent_donations.php">Recent Donations</a></li>
-        <li><a href="reports/hospital_orders.php">Hospital Orders</a></li>
+        <!-- <li><a href="reports/recipients_by_hospital.php">Recipients by Hospital</a></li> -->
+        <!-- <li><a href="reports/recent_donations.php">Recent Donations</a></li> -->
+        <!-- <li><a href="reports/hospital_orders.php">Hospital Orders</a></li> -->
         <li><a href="reports/blood_stock_alerts.php">Blood Stock Alerts</a></li>
-        <li><a href="reports/donation_trends.php">Donation Trends</a></li>
+        <!-- <li><a href="reports/donation_trends.php">Donation Trends</a></li> -->
     </ul>
 </nav>
 
