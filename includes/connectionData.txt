@@ -1,0 +1,9 @@
+<?php
+
+$server = "ix.cs.uoregon.edu";
+$dbname ="blood_donation";
+$user = "guest";
+$pass = "guest";
+$port="3009";
+
+?>
