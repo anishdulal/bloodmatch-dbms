@@ -9,9 +9,14 @@ $query = "SELECT d.id, d.name, COUNT(de.donor_id) AS donation_count
           JOIN donation_event de ON d.id = de.donor_id
           GROUP BY d.id, d.name
           ORDER BY donation_count DESC
-          LIMIT 10";
+          LIMIT 5";
 $stmt = $conn->prepare($query);
-$stmt->execute();
+
+if ($stmt->execute()) {
+    $stmt->execute();
+} else {
+    echo "Error: " . join(", ", $stmt->errorInfo());
+}
 
 ?>
 
@@ -28,7 +33,7 @@ $stmt->execute();
 </header>
 
 <nav>
-<ul>
+    <ul>
         <li><a href="../donors/add_donor.php">Add Donor</a></li>
         <li><a href="../donors/list_donors.php">List Donors</a></li>
         <li><a href="../donors/search_donors.php">Search Donors</a></li>
