@@ -51,7 +51,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
 </header>
 
 <nav>
-<ul>
+    <ul>
         <li><a href="donors/add_donor.php">Add Donor</a></li>
         <li><a href="donors/list_donors.php">List Donors</a></li>
         <li><a href="donors/search_donors.php">Search Donors</a></li>
@@ -84,26 +84,23 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
     <h2>Recipient Registration Form</h2>
 
     <form method="post" action="<?php echo $_SERVER['PHP_SELF'];?>">
-      Name:<br>
-      <input type="text" name="name">
-      <br>
-      Blood Group:<br>
-      <input type="text" name="group">
-      <br>
-      Location:<br>
-      <input type="text" name="location">
-      <br>
-      Hospital:<br>
-      <select name="hospital_id1">
+      <label for="name">Name:</label><br>
+      <input type="text" id="name" name="name"><br><br>
+
+      <label for="group">Blood Group:</label><br>
+      <input type="text" id="group" name="group"><br><br>
+
+      <label for="location">Location:</label><br>
+      <input type="text" id="location" name="location"><br><br>
+
+      <label for="hospital_id1">Hospital:</label><br>
+      <select id="hospital_id1" name="hospital_id1">
         <?php foreach ($hospitals as $hospital): ?>
             <option value="<?php echo $hospital['id']; ?>"><?php echo $hospital['location']; ?></option>
         <?php endforeach; ?>
-      </select>
-      <br><br>
+      </select><br><br>
       <input type="submit" value="Submit">
     </form>
 </div>
-
 </body>
 </html>
-
