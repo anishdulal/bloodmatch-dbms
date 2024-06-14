@@ -62,18 +62,12 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <li><a href="blood_banks/list_blood_banks.php">List Blood Banks</a></li>
         <li><a href="blood_banks/search_blood_banks.php">Search Blood Banks</a></li>
         <li><a href="donations/add_donation.php">Add Donation</a></li>
-        <!-- <li><a href="donations/list_donations.php">List Donations</a></li> -->
-        <!-- <li><a href="donations/search_donations.php">Search Donations</a></li> -->
         <li><a href="reports/top_donors.php">Top Donors</a></li>
         <li><a href="reports/blood_availability.php">Blood Availability</a></li>
         <li><a href="reports/matching_donors_recipients.php">Matching Donors and Recipients</a></li>
         <li><a href="reports/total_donations_by_blood_type.php">Total Donations by Blood Type</a></li>
         <li><a href="reports/blood_bank_donations.php">Blood Bank Donations</a></li>
-        <!-- <li><a href="reports/recipients_by_hospital.php">Recipients by Hospital</a></li> -->
-        <!-- <li><a href="reports/recent_donations.php">Recent Donations</a></li> -->
-        <!-- <li><a href="reports/hospital_orders.php">Hospital Orders</a></li> -->
         <li><a href="reports/blood_stock_alerts.php">Blood Stock Alerts</a></li>
-        <!-- <li><a href="reports/donation_trends.php">Donation Trends</a></li> -->
     </ul>
 </nav>
 
