@@ -62,8 +62,8 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         <li><a href="blood_banks/list_blood_banks.php">List Blood Banks</a></li>
         <li><a href="blood_banks/search_blood_banks.php">Search Blood Banks</a></li>
         <li><a href="donations/add_donation.php">Add Donation</a></li>
-        <li><a href="donations/list_donations.php">List Donations</a></li>
-        <li><a href="donations/search_donations.php">Search Donations</a></li>
+        <!-- <li><a href="donations/list_donations.php">List Donations</a></li> -->
+        <!-- <li><a href="donations/search_donations.php">Search Donations</a></li> -->
         <li><a href="reports/top_donors.php">Top Donors</a></li>
         <li><a href="reports/blood_availability.php">Blood Availability</a></li>
         <li><a href="reports/matching_donors_recipients.php">Matching Donors and Recipients</a></li>
