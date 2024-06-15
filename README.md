@@ -5,14 +5,6 @@ Making it easier to find blood
 
 BloodMatch is a comprehensive Blood Donation Management System developed using PHP and MySQL. It facilitates the management of blood donors, recipients, blood banks, and donation events, making the process of blood donation and distribution more efficient.
 
-## Setup Instructions
-
-1. Clone the repository.
-2. Import the `blood_donation.sql` file to set up the database.
-3. Configure the database connection in `includes/db_connect.php`.
-4. Place the project folder in your web server directory (e.g., `htdocs` for XAMPP).
-5. Access the project via your web browser.
-
 ## Folder Structure
 
 - `css/`: Contains the CSS files.
